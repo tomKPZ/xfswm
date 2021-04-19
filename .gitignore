@@ -1,4 +1,6 @@
-x-active-window-indicator
+xfswm
+pkg
+xfswm-*.pkg.tar*
 
 # Prerequisites
 *.d
