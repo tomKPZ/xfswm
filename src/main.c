@@ -9,6 +9,8 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+#include "config.h"
+
 #define PERROR(msg)     \
   do {                  \
     perror(msg);        \
@@ -42,7 +44,7 @@ int main(void) {
     PERROR("fork");
   if (pid == 0) {
     char* const argv[] = {NULL};
-    execv("/usr/lib/xfswm-init", argv);
+    execv(CMAKE_INSTALL_PREFIX "/lib/xfswm-init", argv);
     PERROR("execv");
   }
 
