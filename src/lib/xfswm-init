@@ -1,0 +1,10 @@
+#!/bin/sh
+
+XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-"$HOME"/.config}"
+XFSWMRC="$XDG_CONFIG_HOME/xfswmrc"
+
+if [ -x "$XFSWMRC" ]; then
+    exec "$XFSWMRC"
+else
+    exec xterm
+fi
