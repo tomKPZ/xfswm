@@ -1,0 +1,14 @@
+pkgbase = xfswm
+	pkgdesc = An X11 window manager that keeps a single window fullscreen
+	pkgver = 0.0.1
+	pkgrel = 1
+	url = https://github.com/tomKPZ/xfswm
+	arch = x86_64
+	license = MIT
+	makedepends = cmake
+	makedepends = git
+	depends = glibc
+	depends = libxcb
+
+pkgname = xfswm
+
