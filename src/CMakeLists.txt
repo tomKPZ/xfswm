@@ -4,12 +4,8 @@ cmake_minimum_required(VERSION 2.6)
 project(XFsWm)
 
 if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
-    add_compile_options(
-        -Werror
-        -Weverything
-        -Wno-weak-vtables
-        -Wno-padded
-        -Wno-disabled-macro-expansion)
+    add_compile_options(-Werror -Weverything -Wno-weak-vtables -Wno-padded
+                        -Wno-disabled-macro-expansion)
 elseif("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
     add_compile_options(
         -Wall
@@ -47,21 +43,24 @@ else()
 endif()
 add_compile_options(-Werror)
 
-add_executable(
-    xfswm
-    main.c)
+add_executable(xfswm main.c)
 
 pkg_check_modules(XCB REQUIRED xcb)
 
-target_link_libraries(xfswm ${XCB_LIBRARIES}
-                      ${XCB_XFIXES_LIBRARIES} ${XCB_XINPUT_LIBRARIES})
+target_link_libraries(xfswm ${XCB_LIBRARIES} ${XCB_XFIXES_LIBRARIES}
+                      ${XCB_XINPUT_LIBRARIES})
 target_include_directories(
-    xfswm
-    PUBLIC ${XCB_INCLUDE_DIRS} ${XCB_XFIXES_INCLUDE_DIRS}
-           ${XCB_XINPUT_INCLUDE_DIRS})
-target_compile_options(
-    xfswm PUBLIC ${XCB_CFLAGS_OTHER} ${XCB_XFIXES_OTHER}
-                                     ${XCB_XINPUT_OTHER})
+    xfswm PUBLIC ${XCB_INCLUDE_DIRS} ${XCB_XFIXES_INCLUDE_DIRS}
+                 ${XCB_XINPUT_INCLUDE_DIRS})
+target_compile_options(xfswm PUBLIC ${XCB_CFLAGS_OTHER} ${XCB_XFIXES_OTHER}
+                                    ${XCB_XINPUT_OTHER})
 
 install(TARGETS xfswm DESTINATION bin)
-install(DIRECTORY share/ DESTINATION share)
+install(
+    DIRECTORY lib/
+    DESTINATION lib
+    USE_SOURCE_PERMISSIONS)
+install(
+    DIRECTORY share/
+    DESTINATION share
+    USE_SOURCE_PERMISSIONS)

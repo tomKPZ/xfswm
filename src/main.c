@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 int main(void) {
-  return 0;
+  return system("/usr/lib/xfswm-init");
 }
