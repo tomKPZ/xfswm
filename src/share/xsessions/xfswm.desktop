@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=xfswm
+Comment=X f window manager
+Exec=xfswm
+TryExec=xfswm
+Type=Application
+X-LightDM-DesktopName=xfswm
+DesktopNames=xfswm
+Keywords=wm;windowmanager;window;manager;

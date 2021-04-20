@@ -64,3 +64,4 @@ target_compile_options(
                                      ${XCB_XINPUT_OTHER})
 
 install(TARGETS xfswm DESTINATION bin)
+install(DIRECTORY share/ DESTINATION share)
