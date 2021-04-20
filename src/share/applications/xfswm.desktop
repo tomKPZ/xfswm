@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=xfswm
+NoDisplay=true
+GenericName=X fullscreen window manager
+Comment=keeps a single window fullscreen
+Exec=xfswm
+X-GNOME-WMName=xfswm
+X-GNOME-Autostart-Phase=WindowManager
+X-GNOME-Provides=windowmanager
+X-GNOME-Autostart-Notify=false
