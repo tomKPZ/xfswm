@@ -1,6 +1,7 @@
 xfswm
 pkg
 xfswm-*.pkg.tar*
+config.h
 
 # Prerequisites
 *.d

@@ -1,5 +1,0 @@
-[
-    { include: ["<bits/stdint-uintn.h>", "private", "<cstdint>", "public"] },
-    { include: ["<bits/stdint-intn.h>", "private", "<cstdint>", "public"] },
-    { include: ["<bits/types/siginfo_t.h>", "private", "<signal.h>", "public"] },
-]
